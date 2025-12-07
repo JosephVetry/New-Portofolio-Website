@@ -316,18 +316,19 @@ section {
 
 /* EXPERIENCE SECTION */
 
-#experience {
+#career {
   position: relative;
+  margin-bottom: 5rem;
 }
 
-.experience-sub-title {
+.career-sub-title {
   color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
 }
 
-.experience-details-container {
+.career-details-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -429,4 +430,122 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+#career .career-details-container {
+    display: block; /* Mengganti flex, agar elemen timeline berjejer vertikal */
+    padding: 2rem 0;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Garis Vertikal (The Line) */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: rgb(53, 53, 53); /* Warna garis hitam */
+    top: 0;
+    bottom: 0;
+    left: 50%; /* Posisikan garis di tengah */
+    margin-left: -1px;
+}
+
+/* Setiap Kotak Item Pengalaman */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%; /* Setiap item mengisi setengah lebar container */
+    box-sizing: border-box; /* Agar padding tidak merusak lebar */
+}
+
+/* Titik Bulat pada Garis */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #FFFFFF; /* Warna latar titik */
+    border: 3px solid rgb(53, 53, 53); /* Garis tepi titik */
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Item di Sisi Kiri Garis */
+.left {
+    left: 0;
+}
+
+/* Item di Sisi Kanan Garis */
+.right {
+    left: 50%;
+}
+
+/* Penempatan Titik untuk Item Kiri */
+.left::after {
+    right: -10px; 
+}
+
+/* Penempatan Titik untuk Item Kanan */
+.right::after {
+    left: -8px; 
+}
+
+/* Konten Teks di Dalam Kotak (Agar rapi) */
+.timeline-content {
+    padding: 20px;
+    background: rgb(240, 240, 240); /* Warna latar belakang kotak pengalaman */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Penyesuaian Teks Item di Sisi Kiri (Rata Kanan Kotak) */
+.left .timeline-content {
+    text-align: left;
+}
+
+/* Penyesuaian Teks Item di Sisi Kanan (Rata Kiri Kotak) */
+.right .timeline-content {
+    text-align: left;
+}
+
+/* Styling Judul dan Deskripsi */
+.job-title {
+    font-size: 1.3rem;
+    color: rgb(53, 53, 53);
+    margin-bottom: 0.5rem;
+}
+.company-name {
+    font-size: 1.1rem;
+    color: #333333; /* Warna abu-abu gelap */
+    font-weight: 600; /* Dibuat tebal agar menonjol */
+    margin-top: -5px; /* Sedikit geser ke atas mendekati judul */
+    margin-bottom: 0px; 
+}
+.right .company-name {
+    text-align: left; /* Rata kiri agar sejajar dengan judul di sisi kanan */
+}
+.company-date {
+    font-size: 0.9rem;
+    color: #000000;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.job-description {
+    list-style: disc;
+    padding-left: 20px;
+    text-align: initial; /* Pastikan poin tetap rata kiri meskipun kotaknya rata kanan */
+}
+.left .job-description {
+    list-style: disc;
+    text-align: left;
+}
+.left .job-description li {
+    padding-left: 0;
 }

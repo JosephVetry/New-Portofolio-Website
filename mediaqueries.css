@@ -100,4 +100,30 @@
   .text-container {
     text-align: justify;
   }
+  .timeline-container::after {
+    left: 31px; /* Posisikan garis ke kiri */
+  }
+  .timeline-item {
+    width: 100%; /* Semua item ambil 100% lebar */
+    padding-left: 70px; /* Beri ruang di kiri untuk garis */
+    padding-right: 25px;
+    left: 0; /* Semua item mulai dari kiri */
+  }
+
+  /* Posisikan titik agar pas di garis baru */
+  .timeline-item::after {
+    left: 20px;
+  }
+
+  /* Semua konten teks rata kiri di mobile */
+  .left .timeline-content,
+  .right .timeline-content {
+    text-align: left;
+  }
+  .left .job-description,
+  .right .job-description {
+    text-align: initial; /* Pastikan list rata kiri */
+    padding-left: 20px;
+    list-style: disc;
+  }
 }
