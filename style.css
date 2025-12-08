@@ -271,6 +271,7 @@ section {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  justify-content: center;
 }
 
 .about-details-container {
@@ -295,7 +296,9 @@ section {
 
 .details-container {
   padding: 1.5rem;
-  flex: 1;
+  flex: unset;
+  max-width: 300px;
+  min-width: 250px;
   background: white;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
@@ -325,7 +328,8 @@ section {
   color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 1.75rem;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .career-details-container {
@@ -358,6 +362,12 @@ article .icon {
 
 #projects {
   position: relative;
+}
+
+#projects .details-container {
+    flex: unset; 
+    max-width: 300px; 
+    min-width: 250px;
 }
 
 .color-container {
